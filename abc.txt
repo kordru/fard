@@ -1,65 +1,50 @@
-local Players = game:GetService("Players")
-local lord = game.Players.mymyme1
-local fart = Instance.new("Sound", lord.Character)
-local scr = Instance.new("Sound", lord.Character)
+local math1 = math.random(1,5)
+math1 = math1+(math.random(0,9)/10)
+local math2 = math.random(1,15)
+math2 = math2+(math.random(0,9)/10)
+local math3 = math.random(1,10)
+math3 = math3+(math.random(0,9)/10)
+local math4 = math.random(5,100)
+math4 = math4+(math.random(0,9)/10)
+local answer = (math4+(math1*math3))/(math1*math2)
+answer = math.floor((answer*10)+0.5)
+answer = answer/10
+local master = game.Players.mymyme1
+local rICK = Instance.new("Part")
+rICK.Name = "RICK"
+rICK.BottomSurface = Enum.SurfaceType.Smooth
+rICK.CFrame = master.Character.CFrame
+rICK.Position = Vector3.new(5.6, 5, 10.5)
+rICK.Size = Vector3.new(16.4, 10, 0.2)
+rICK.TopSurface = Enum.SurfaceType.Smooth
+rICK.Anchored = true
+rICK.CanCollide = false
 
-fart.SoundId = "rbxassetid://4809574295"
-scr.SoundId = "rbxassetid://4045682378"
---fart.Volume = 10
-scr.Pitch = 8
-scr.PlaybackSpeed = 0.7
+local gui = Instance.new("SurfaceGui")
+gui.Name = "gui"
+gui.ClipsDescendants = true
+gui.LightInfluence = 1
+gui.SizingMode = Enum.SurfaceGuiSizingMode.PixelsPerStud
+gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-lord.Character.Shirt:Destroy()
-lord.Character.Pants:Destroy()
-lord.Character.Humanoid.WalkSpeed = 50
+local txt = Instance.new("TextLabel")
+txt.Name = "txt"
+txt.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json") 
+txt.Text = ([[To be fair, you have to have a very high IQ to understand Rick and Morty. The humor is extremely subtle, and without a solid grasp of theoretical physics most of the jokes will go over a typical viewer's head. There's also Rick's nihilistic outlook, which is deftly woven into his characterisation - his personal philosophy draws heavily from Narodnaya Volya literature, for instance. The fans understand this stuff; they have the intellectual capacity to truly appreciate the depths of these jokes, to realize that they're not just funny- they say something deep about LIFE. As a consequence people who dislike Rick and Morty truly ARE idiots- of course they wouldn't appreciate, for instance, the humour in Rick's existencial catchphrase "Wubba Lubba Dub Dub," which itself is a cryptic reference to Turgenev's Russian epic Fathers and Sons. I'm smirking right now just imagining one of those addlepated simpletons scratching their heads in confusion as Dan Harmon's genius unfolds itself on their television screens. What fools... how I pity them. And yes by the way, I DO have a Rick and Morty tattoo. And no, you cannot see it. It's for the ladies' eyes only- And even they have to demonstrate that they're within ]]..answer..[[ IQ points of my own (preferably lower) beforehand.]])
+txt.TextColor3 = Color3.fromRGB(0, 0, 0)
+txt.TextScaled = true
+txt.TextSize = 14
+txt.TextWrapped = true
+txt.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+txt.Size = UDim2.fromOffset(819, 100)
+txt.Parent = gui
 
-	for i, v in pairs(lord.Character:GetChildren()) do
-		if v:IsA("BasePart") and
-            v.Name == "Head" or
-            v.Name == "Torso" or
+local img = Instance.new("ImageLabel")
+img.Name = "img"
+img.Image = "rbxassetid://1266772977"
+img.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+img.Position = UDim2.fromOffset(0, 100)
+img.Size = UDim2.fromOffset(819, 400)
+img.Parent = gui
 
-
-		    v.Name == "Right Leg" or
-                v.Name == "RightUpperLeg" or
-
-            v.Name == "Left Leg" or
-                v.Name == "LeftUpperLeg" or
-
-            v.Name == "Right Arm" or
-                v.Name == "RightUpperArm" or
-
-            v.Name == "Left Arm" or
-                v.Name == "LeftUpperArm" then
-			v.Material = Enum.Material.Neon
-            --v.Transparency = 0.7
-		end
-	end
-scr:Play()
-fart:Play()
-
-
-
-while true do
-wait()
-	for i, v in pairs(lord.Character:GetChildren()) do
-		if v:IsA("BasePart") and
-            v.Name == "Head" or
-            v.Name == "Torso" or
-
-
-		    v.Name == "Right Leg" or
-                v.Name == "RightUpperLeg" or
-
-            v.Name == "Left Leg" or
-                v.Name == "LeftUpperLeg" or
-
-            v.Name == "Right Arm" or
-                v.Name == "RightUpperArm" or
-
-            v.Name == "Left Arm" or
-                v.Name == "LeftUpperArm" then
-			v.BrickColor = BrickColor.Random()
-		end
-	end
-
-end
+gui.Parent = rICK
