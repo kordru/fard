@@ -1,4 +1,5 @@
 local a = Instance.new("Hint", workspace)
+a.Text="Uh oh... I hear something BAD..."
 local s = {
 	"1283290053",
 	"9113398885",
@@ -16,6 +17,7 @@ local trol = {
 	"trololololo",
 	"leave roblox",
 }
+wait(5)
 while true do
 	local rs = s[math.random(#s)]
 	local troll = trol[math.random(#trol)]
@@ -23,9 +25,12 @@ while true do
 	wait()
 	local b = Instance.new("Sound", workspace)
 	b.SoundId = "rbxassetid://"..rs
-	b.PlaybackSpeed = math.random(0.0001, 10.0000)
+	local pb = math.random(0.0001, 10.0000)
+	b.PlaybackSpeed = pb
 	b.Volume = 100
 	b:Play()
+	wait(b.TimeLength/pb)
+	b:Destroy()
 	workspace.Gravity=math.random(-100, 100)
 	
 	game.Players.RespawnTime = 0
