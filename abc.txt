@@ -7,10 +7,19 @@ local s = {
 	"5855421995",
 	"6043095959"
 }
+local trol = {
+	"get trolled",
+	"popbob was here",
+	"pro hacker mode",
+	"pwnd by popbob",
+	"hackers are fake",
+	"trololololo",
+	"leave roblox",
+}
 while true do
 	local rs = s[math.random(#s)]
-	local h = math.random(000000, 999999)
-	a.Text = h
+	local troll = trol[math.random(#trol)]
+	a.Text = troll
 	wait()
 	local b = Instance.new("Sound", workspace)
 	b.SoundId = "rbxassetid://"..rs
@@ -19,7 +28,7 @@ while true do
 	b:Play()
 	workspace.Gravity=math.random(-100, 100)
 	
-	game.Players.RespawnTime = 999
+	game.Players.RespawnTime = 0
 	for i,v in pairs(workspace:GetDescendants()) do
 		if v:IsA("BasePart") then
 			v.BrickColor = BrickColor.random()
