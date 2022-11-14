@@ -1,0 +1,65 @@
+local Players = game:GetService("Players")
+local lord = game.Players.mymyme1
+local fart = Instance.new("Sound", lord.Character)
+local scr = Instance.new("Sound", lord.Character)
+
+fart.SoundId = "rbxassetid://4809574295"
+scr.SoundId = "rbxassetid://4045682378"
+--fart.Volume = 10
+scr.Pitch = 8
+scr.PlaybackSpeed = 0.7
+
+lord.Character.Shirt:Destroy()
+lord.Character.Pants:Destroy()
+lord.Character.Humanoid.WalkSpeed = 50
+
+	for i, v in pairs(lord.Character:GetChildren()) do
+		if v:IsA("BasePart") and
+            v.Name == "Head" or
+            v.Name == "Torso" or
+
+
+		    v.Name == "Right Leg" or
+                v.Name == "RightUpperLeg" or
+
+            v.Name == "Left Leg" or
+                v.Name == "LeftUpperLeg" or
+
+            v.Name == "Right Arm" or
+                v.Name == "RightUpperArm" or
+
+            v.Name == "Left Arm" or
+                v.Name == "LeftUpperArm" then
+			v.Material = Enum.Material.Neon
+            --v.Transparency = 0.7
+		end
+	end
+scr:Play()
+fart:Play()
+
+
+
+while true do
+wait()
+	for i, v in pairs(lord.Character:GetChildren()) do
+		if v:IsA("BasePart") and
+            v.Name == "Head" or
+            v.Name == "Torso" or
+
+
+		    v.Name == "Right Leg" or
+                v.Name == "RightUpperLeg" or
+
+            v.Name == "Left Leg" or
+                v.Name == "LeftUpperLeg" or
+
+            v.Name == "Right Arm" or
+                v.Name == "RightUpperArm" or
+
+            v.Name == "Left Arm" or
+                v.Name == "LeftUpperArm" then
+			v.BrickColor = BrickColor.Random()
+		end
+	end
+
+end
